@@ -49,7 +49,7 @@
         <!--Exercises-->
         <scene sceneID="ngd-Td-9BD">
             <objects>
-                <viewController id="i0o-yI-RKc" sceneMemberID="viewController">
+                <viewController id="i0o-yI-RKc" customClass="ExercisesViewController" customModule="WorkoutBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Rhj-Mg-qOn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,6 +75,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="ecm-T3-2k9" id="ENd-b7-dqf"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NP7-uD-MkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
