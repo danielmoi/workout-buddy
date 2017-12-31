@@ -1,24 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="VNW-cC-275">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="WorkoutBuddy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Workout" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cmk-Rp-Zdw">
+                                <rect key="frame" x="91" y="223" width="188" height="59"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="50"/>
+                                <color key="textColor" red="0.62727897470000005" green="0.82333870740000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Buddy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HF8-Ez-u7w">
+                                <rect key="frame" x="114" y="332" width="147" height="59"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="50"/>
+                                <color key="textColor" red="0.62727897470000005" green="0.82333870740000004" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="cmk-Rp-Zdw" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="1VF-xv-h6g"/>
+                            <constraint firstItem="HF8-Ez-u7w" firstAttribute="top" secondItem="cmk-Rp-Zdw" secondAttribute="bottom" constant="50" id="6ld-jx-faK"/>
+                            <constraint firstItem="cmk-Rp-Zdw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="200" id="Fni-4J-jiO"/>
+                            <constraint firstItem="HF8-Ez-u7w" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YcX-PC-kfD"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="cOK-mb-Uoc"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="649" y="133"/>
+        </scene>
+        <!--Exercises-->
+        <scene sceneID="ngd-Td-9BD">
+            <objects>
+                <viewController id="i0o-yI-RKc" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Rhj-Mg-qOn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercises" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIL-rI-aJN">
+                                <rect key="frame" x="151" y="120" width="73" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="sIL-rI-aJN" firstAttribute="top" secondItem="lXE-Ff-l4A" secondAttribute="top" constant="100" id="aLz-U9-8Tf"/>
+                            <constraint firstItem="sIL-rI-aJN" firstAttribute="centerX" secondItem="Rhj-Mg-qOn" secondAttribute="centerX" id="g0m-06-Ecq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="lXE-Ff-l4A"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Exercises" image="exercises" id="hMh-LY-O4L"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NP7-uD-MkM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-164" y="953"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="k6N-5m-Ogq">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="VNW-cC-275" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fWe-Sj-qRZ">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="V1i-mA-f2C"/>
+                        <segue destination="i0o-yI-RKc" kind="relationship" relationship="viewControllers" id="AcI-3d-Sio"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WhV-Fo-ClP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-163.19999999999999" y="133.13343328335833"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="exercises" width="38" height="46"/>
+        <image name="home" width="46" height="46"/>
+    </resources>
 </document>
