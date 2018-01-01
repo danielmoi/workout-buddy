@@ -14,12 +14,21 @@ class ExerciseViewController: UIViewController {
     
     @IBOutlet weak var saveButton: UIButton!
     
+    var exercise: Exercise? = nil
+    
     
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if (exercise == nil) {
+            print("NIL")
+            let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+            
+            exercise = Exercise(context: context)
+        }
+        print("exercise:\(exercise)")
         // Do any additional setup after loading the view.
     }
 
@@ -29,6 +38,17 @@ class ExerciseViewController: UIViewController {
     }
     
     @IBAction func saveTapped(_ sender: Any) {
+        // create a Task from the outlet information
+//        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+//
+//        let task = Task(context: context)
+        
+        exercise!.name = nameTextField.text!
+        
+        (UIApplication.shared.delegate as! AppDelegate).saveContext()
+        
+        // Pop back
+        navigationController!.popViewController(animated: true)
     }
     
     /*

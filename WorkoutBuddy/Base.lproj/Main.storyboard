@@ -71,12 +71,13 @@
                     <navigationItem key="navigationItem" title="Exercises" id="e76-fO-pZO">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="u9X-Na-hb0">
                             <connections>
-                                <segue destination="jwn-DR-DR4" kind="show" id="s7h-Gv-SqU"/>
+                                <action selector="addTapped:" destination="i0o-yI-RKc" id="9BW-uU-2A5"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ecm-T3-2k9" id="ENd-b7-dqf"/>
+                        <segue destination="jwn-DR-DR4" kind="show" identifier="viewExerciseSegue" id="pdF-nb-kWa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NP7-uD-MkM" userLabel="First Responder" sceneMemberID="firstResponder"/>

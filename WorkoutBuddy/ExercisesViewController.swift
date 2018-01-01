@@ -12,11 +12,18 @@ class ExercisesViewController: UIViewController, UITableViewDataSource, UITableV
 
     @IBOutlet weak var tableView: UITableView!
     
+    var exercises: [Exercise] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getExercises()
+        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,12 +32,42 @@ class ExercisesViewController: UIViewController, UITableViewDataSource, UITableV
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return exercises.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
+        let exercise = exercises[indexPath.row]
+        cell.textLabel?.text = exercise.name
         return cell
+    }
+    
+    func getExercises() {
+        let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+        
+        do {
+            exercises = try context.fetch(Exercise.fetchRequest()) as! [Exercise]
+        } catch {
+            print("OOPS ERROR")
+        }
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("***********")
+        print("sender:\(sender)")
+        if (segue.identifier == "viewExerciseSegue") {
+            let nextVC = segue.destination as! ExerciseViewController
+            nextVC.exercise = sender as? Exercise
+        }
+        
+    }
+    
+    
+    @IBAction func addTapped(_ sender: Any) {
+        
+        
+        performSegue(withIdentifier: "viewExerciseSegue", sender: nil )
     }
     
 
